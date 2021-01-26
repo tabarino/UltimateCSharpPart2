@@ -12,9 +12,12 @@ namespace IntroductionClasses
         // This way it’s easier to get or set items in the collection.
 
         // Key type string and Value type string
-        // A Dictionary is used to translate Key into Strings
+        // A Dictionary is used to transform Key into Strings in an efficient way
         private readonly Dictionary<string, string> _dictionary;
+        public DateTime Expiry { get; set; }
 
+        // Declaring an Indexer
+        // Instead of an Identifier we use the "this" keyword
         public string this[string key]
         {
             get => _dictionary[key];

@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IntroductionClasses\IntroductionClasses.csproj" />
+    <ProjectReference Include="..\AssociationBetweenClasses\AssociationBetweenClasses.csproj" />
   </ItemGroup>
 </Project>

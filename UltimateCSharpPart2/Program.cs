@@ -1,5 +1,6 @@
 ﻿using System;
 using IntroductionClasses;
+using AssociationBetweenClasses;
 
 namespace UltimateCSharpPart2
 {
@@ -7,7 +8,9 @@ namespace UltimateCSharpPart2
     {
         static void Main(string[] args)
         {
-            IntroducingClasses();
+            //IntroducingClasses();
+
+            AssociationBetweenClasses();
         }
 
         static void IntroducingClasses()
@@ -99,9 +102,27 @@ namespace UltimateCSharpPart2
 
 
             // Indexers
-            var cookie = new HttpCookie();
-            cookie["name"] = "Ivan";
-            Console.WriteLine(cookie["name"]);
+            //var cookie = new HttpCookie();
+            //cookie.Expiry = DateTime.Today.AddDays(5);
+            //cookie["name"] = "Ivan";
+            //Console.WriteLine(cookie["name"]);
+            //Console.WriteLine(cookie.Expiry);
+        }
+
+        static void AssociationBetweenClasses()
+        {
+            // Inheritance
+            //var text = new Text();
+            //text.Width = 100;
+            //text.Copy();
+
+
+            // Composition
+            var logger = new Logger();
+            var dbMigrator = new DbMigrator(logger);
+            var installer = new Installer(logger);
+            dbMigrator.Migrate();
+            installer.Install();
         }
     }
 }

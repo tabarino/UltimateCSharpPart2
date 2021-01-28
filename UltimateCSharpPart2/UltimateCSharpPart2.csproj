@@ -8,5 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="..\IntroductionClasses\IntroductionClasses.csproj" />
     <ProjectReference Include="..\AssociationBetweenClasses\AssociationBetweenClasses.csproj" />
+    <ProjectReference Include="..\Inheritance\Inheritance.csproj" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,9 @@
 ﻿using System;
 using IntroductionClasses;
 using AssociationBetweenClasses;
+using Inheritance;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace UltimateCSharpPart2
 {
@@ -10,7 +13,9 @@ namespace UltimateCSharpPart2
         {
             //IntroducingClasses();
 
-            AssociationBetweenClasses();
+            //AssociationBetweenClasses();
+
+            Inheritance();
         }
 
         static void IntroducingClasses()
@@ -118,11 +123,68 @@ namespace UltimateCSharpPart2
 
 
             // Composition
-            var logger = new Logger();
-            var dbMigrator = new DbMigrator(logger);
-            var installer = new Installer(logger);
-            dbMigrator.Migrate();
-            installer.Install();
+            //var logger = new Logger();
+            //var dbMigrator = new DbMigrator(logger);
+            //var installer = new Installer(logger);
+            //dbMigrator.Migrate();
+            //installer.Install();
+        }
+
+        static void Inheritance()
+        {
+            // Access Modifiers
+            //var goldCustomer = new GoldCustomer();
+            //goldCustomer.OfferVoucher();
+
+
+            // Constructors and Inheritance
+            //var car = new Car("XYZ1234");
+
+
+            // Upcasting and Downcasting
+            //var text = new Inheritance.Text();
+
+            //// Upcasting - text and shape are pointing/reference to the same object in memory
+            //// Upcasting is implicit, you can convert a object reference to its base class reference
+            //Shape shape = text;
+            //text.Width = 200;
+            //shape.Width = 100;
+            //Console.WriteLine(text.Width);
+
+            //// Downcasting
+            //// Downcasting is used to convert an object to a more specific type
+            //// To do that you can use an explicit cast "Inheritance.Text)shape1"
+            //// or the as keyword "shape1 as Inheritance.Text"
+            //// shape1 here won't have access to Text methods or properties
+            //// You need to downcast to be able to access the Text methods or properties
+            //Shape shape1 = new Inheritance.Text();
+            //// After downcasting you are able to access all Text methods and properties
+            //Inheritance.Text text1 = (Inheritance.Text)shape1;
+            //// Or Better to downcasting in a safer way
+            //var text2 = shape1 as Inheritance.Text;
+
+
+            // Boxing and Unboxing
+            // Boxing - The process of converting a value type instance to an object reference
+            int number = 10;
+            object obj = number;
+            Console.WriteLine(obj.ToString());
+
+            // Unboxing - Converting an object reference into a value type instance
+            object obj2 = 10;
+            int number2 = (int)obj2;
+
+            // Both have a performance penalty. So you should avoid doing it.
+            // ArrayLists receive an object, if you send string, int or any other value type, you are doing boxing.
+            var list = new ArrayList();
+            list.Add(1);
+            list.Add("Ivan");
+            list.Add(DateTime.Today);
+            // Instead of using ArrayLists, in this case you should use Generic Lists
+            // In Generic List you can set the type you want.
+            // So in this case, sending a int to this list won't do a boxing or unboxing
+            var anotherList = new List<int>();
+            anotherList.Add(1);
         }
     }
 }

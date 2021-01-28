@@ -9,5 +9,6 @@
     <ProjectReference Include="..\IntroductionClasses\IntroductionClasses.csproj" />
     <ProjectReference Include="..\AssociationBetweenClasses\AssociationBetweenClasses.csproj" />
     <ProjectReference Include="..\Inheritance\Inheritance.csproj" />
+    <ProjectReference Include="..\Polymorphism\Polymorphism.csproj" />
   </ItemGroup>
 </Project>

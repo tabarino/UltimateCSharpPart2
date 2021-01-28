@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using IntroductionClasses;
 using AssociationBetweenClasses;
 using Inheritance;
-using System.Collections;
-using System.Collections.Generic;
+using Polymorphism;
 
 namespace UltimateCSharpPart2
 {
@@ -15,7 +16,9 @@ namespace UltimateCSharpPart2
 
             //AssociationBetweenClasses();
 
-            Inheritance();
+            //Inheritance();
+
+            Polymorphism();
         }
 
         static void IntroducingClasses()
@@ -166,25 +169,51 @@ namespace UltimateCSharpPart2
 
             // Boxing and Unboxing
             // Boxing - The process of converting a value type instance to an object reference
-            int number = 10;
-            object obj = number;
-            Console.WriteLine(obj.ToString());
+            //int number = 10;
+            //object obj = number;
+            //Console.WriteLine(obj.ToString());
 
-            // Unboxing - Converting an object reference into a value type instance
-            object obj2 = 10;
-            int number2 = (int)obj2;
+            //// Unboxing - Converting an object reference into a value type instance
+            //object obj2 = 10;
+            //int number2 = (int)obj2;
 
-            // Both have a performance penalty. So you should avoid doing it.
-            // ArrayLists receive an object, if you send string, int or any other value type, you are doing boxing.
-            var list = new ArrayList();
-            list.Add(1);
-            list.Add("Ivan");
-            list.Add(DateTime.Today);
-            // Instead of using ArrayLists, in this case you should use Generic Lists
-            // In Generic List you can set the type you want.
-            // So in this case, sending a int to this list won't do a boxing or unboxing
-            var anotherList = new List<int>();
-            anotherList.Add(1);
+            //// Both have a performance penalty. So you should avoid doing it.
+            //// ArrayLists receive an object, if you send string, int or any other value type, you are doing boxing.
+            //var list = new ArrayList();
+            //list.Add(1);
+            //list.Add("Ivan");
+            //list.Add(DateTime.Today);
+            //// Instead of using ArrayLists, in this case you should use Generic Lists
+            //// In Generic List you can set the type you want.
+            //// So in this case, sending a int to this list won't do a boxing or unboxing
+            //var anotherList = new List<int>();
+            //anotherList.Add(1);
+        }
+
+        static void Polymorphism()
+        {
+            // Method Overriding
+            //var shapes = new List<PolyShape>();
+            //shapes.Add(new Circle());
+            //shapes.Add(new Rectangle());
+            //shapes.Add(new Triangle());
+            //var canvas = new Canvas();
+            //canvas.DrawShapes(shapes);
+
+
+            // Abstract Classes and Members
+            // We cannot instanciate shape, because it is declared as abstract
+            //var shape = new AbstractShape();
+            //var circle = new CircleAbstractExample();
+            //circle.Draw();
+            //var rectangle = new RectangleAbstractExample();
+            //rectangle.Draw();
+
+
+            // Sealed Class
+            //var sealedClass = new SealedClassExample();
+            var sealedFunctionClass = new SealedFunctionExample();
+            sealedFunctionClass.Draw();
         }
     }
 }

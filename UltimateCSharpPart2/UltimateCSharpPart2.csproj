@@ -10,5 +10,6 @@
     <ProjectReference Include="..\AssociationBetweenClasses\AssociationBetweenClasses.csproj" />
     <ProjectReference Include="..\Inheritance\Inheritance.csproj" />
     <ProjectReference Include="..\Polymorphism\Polymorphism.csproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
   </ItemGroup>
 </Project>

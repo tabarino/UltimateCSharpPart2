@@ -5,6 +5,7 @@ using IntroductionClasses;
 using AssociationBetweenClasses;
 using Inheritance;
 using Polymorphism;
+using Interfaces;
 
 namespace UltimateCSharpPart2
 {
@@ -18,7 +19,9 @@ namespace UltimateCSharpPart2
 
             //Inheritance();
 
-            Polymorphism();
+            //Polymorphism();
+
+            Interfaces();
         }
 
         static void IntroducingClasses()
@@ -212,8 +215,49 @@ namespace UltimateCSharpPart2
 
             // Sealed Class
             //var sealedClass = new SealedClassExample();
-            var sealedFunctionClass = new SealedFunctionExample();
-            sealedFunctionClass.Draw();
+            //var sealedFunctionClass = new SealedFunctionExample();
+            //sealedFunctionClass.Draw();
+        }
+
+        static void Interfaces()
+        {
+            // Interfaces and Testability
+            // var orderProcessor = new OrderProcessor(new ShippingCalculator());
+            // var order = new Interfaces.Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+            // orderProcessor.Process(order);
+
+
+            // Interfaces and Extensibility
+            // var dbMigrator = new Interfaces.DbMigrator(new ConsoleLogger());
+            // dbMigrator.Migrate();
+            // var dbMigrator2 = new Interfaces.DbMigrator(new FileLogger("/Users/itabarino/Downloads/log.txt"));
+            // dbMigrator2.Migrate();
+
+
+            // Interfaces are NOT for Multiple Inheritance
+            // One of the common misconceptions about interfaces is that they are used to implement multiple inheritance in C#.
+            // This is fundamentally wrong, yet many books and videos make such a false claim.
+            // With inheritance, we write code once and re-use it without the need to type all that code again.
+            // With interfaces, we simply declare the members the implementing class should contain.
+            // Then we need to type all that declaration along with the actual implementation in that class.
+            // So, code is not inherited, even the declaration of the members!
+            // In Inheritance you write all the code in the parent class
+            // and all derived classes inherit all the code from the parent class
+            // The Interfaces don't have any code, just includes the method declaration
+            // So, there is not code to inherit
+            // A class implements an Multiple Interface and extends from only one class.
+            // Check the code in the TextBox to see that extends from UiControl and implements IDraggable and IDroppable
+            // var textBox = new TextBox();
+            // textBox.Focus();
+
+
+            // Interfaces and Polymorphism
+            // OCP - software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
+            // We implemented the OCP (Open-Closed Principle) here.
+            var encoder = new VideoEncoder();
+            encoder.RegisterNotificationChannel(new MailNotificationChannel());
+            encoder.RegisterNotificationChannel(new SmsNotificationChannel());
+            encoder.Encode(new Video());
         }
     }
 }
